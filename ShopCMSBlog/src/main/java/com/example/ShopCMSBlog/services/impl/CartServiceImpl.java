@@ -24,7 +24,7 @@ public class CartServiceImpl extends CommonServiceImpl<CartEntity, Long, CartRep
     }
 
     @Override
-    public CartDto createCart(CartDto cart) {
+    public CartDto saveCart(CartDto cart) {
         CartEntity cartEntity = cartMapper.toEntity(cart);
         cartEntity = repo.save(cartEntity);
         return cartMapper.toDto(cartEntity);

@@ -5,6 +5,6 @@ import com.example.ShopCMSBlog.entites.CartEntity;
 
 public interface CartService extends CommonService<CartEntity, Long> {
     CartDto getCartByCustomerId(Long customerId);
-    CartDto createCart(CartDto cart);
+    CartDto saveCart(CartDto cart);
     CartDto deleteCart(Long id);
 }
