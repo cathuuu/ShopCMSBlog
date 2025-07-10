@@ -12,4 +12,6 @@ public interface RoleService extends CommonService<RoleEntity, Long> {
     List<RoleDto> findByIdAndName(Long id, String name);
     RoleDto save(RoleDto roleDto);
     RoleDto delete(Long id);
+
+    List<RoleEntity> findAllByIdIn(List<Long> roleIds);
 }

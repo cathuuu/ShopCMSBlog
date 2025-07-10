@@ -1,17 +1,15 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.BlogLikeDto;
-import com.example.ShopCMSBlog.dtos.SupplierDto;
 import com.example.ShopCMSBlog.entites.BlogLikeEntity;
-import com.example.ShopCMSBlog.mappers.SupplierMapper;
 import com.example.ShopCMSBlog.services.BlogLikeService;
-import com.example.ShopCMSBlog.services.SupplierService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping("/api/v1/suppliers")
+@RequestMapping(UrlUtils.BlogLike_URL)
 public class BlogLikeController {
 
     private final BlogLikeService blogLikeService;
@@ -21,15 +19,15 @@ public class BlogLikeController {
     }
 
 
-    @GetMapping("/search")
-    public ResponseEntity<Object> getLikeById(@RequestParam Long id) {
-        var result = blogLikeService.getLikeById(id);
+    @GetMapping("/findbyid")
+    public ResponseEntity<Object> findLikeById(@RequestParam Long id) {
+        var result = blogLikeService.findLikeById(id);
         return ResponseEntity.ok(result);
     }
 
-    @GetMapping()
-    public ResponseEntity<Object> getLikeByPost(@RequestParam Long id) {
-        var result = blogLikeService.getLikesByPost(id);
+    @GetMapping("/findbypost")
+    public ResponseEntity<Object> findLikeByPost(@RequestParam Long id) {
+        var result = blogLikeService.findByPost(id);
         return ResponseEntity.ok(result);
     }
     @GetMapping()
@@ -39,13 +37,13 @@ public class BlogLikeController {
     }
 
     @PostMapping()
-    public ResponseEntity<Object> createSupplier(@RequestBody BlogLikeDto dto) {
+    public ResponseEntity<Object> creatBlogLike(@RequestBody BlogLikeDto dto) {
         var result = blogLikeService.save((List<BlogLikeEntity>) dto);
         return ResponseEntity.ok(result);
     }
 
     @PutMapping()
-    public ResponseEntity<Object> updateSupplier(@RequestBody BlogLikeDto dto) {
+    public ResponseEntity<Object> updateBlogLike(@RequestBody BlogLikeDto dto) {
         var result = blogLikeService.save((List<BlogLikeEntity>) dto);
         return ResponseEntity.ok(result);
     }

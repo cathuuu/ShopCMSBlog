@@ -1,17 +1,16 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.SupplierDto;
-import com.example.ShopCMSBlog.entites.SupplierEntity;
 import com.example.ShopCMSBlog.mappers.SupplierMapper;
 import com.example.ShopCMSBlog.services.SupplierService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/v1/suppliers")
+@RequestMapping(UrlUtils.Supplier_URL)
 public class SupplierController {
     private final SupplierService supplierService;
 

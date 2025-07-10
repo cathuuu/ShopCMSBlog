@@ -3,14 +3,14 @@ package com.example.ShopCMSBlog.controllers;
 import com.example.ShopCMSBlog.dtos.OrderDto;
 import com.example.ShopCMSBlog.entites.CustomerEntity;
 import com.example.ShopCMSBlog.services.CustomerService;
-import com.example.ShopCMSBlog.services.OrderService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/posts")
+@RequestMapping(UrlUtils.Customer_URL)
 public class CustomerController {
     private final CustomerService customerService;
 

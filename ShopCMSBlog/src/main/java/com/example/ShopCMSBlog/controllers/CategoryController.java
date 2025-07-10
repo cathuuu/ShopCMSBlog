@@ -2,11 +2,12 @@ package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.CategoryDto;
 import com.example.ShopCMSBlog.services.CategoryService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/suppliers")
+@RequestMapping(UrlUtils.Category_URL)
 public class CategoryController {
 
 

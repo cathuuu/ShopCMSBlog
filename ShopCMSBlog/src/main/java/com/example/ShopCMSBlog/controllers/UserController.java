@@ -2,8 +2,8 @@ package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.UserDto;
 import com.example.ShopCMSBlog.dtos.UserRequestDto;
-import com.example.ShopCMSBlog.entites.UserEntity;
 import com.example.ShopCMSBlog.services.UserService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping(UrlUtils.USER_URL)
 public class UserController {
     private final UserService userService;
 

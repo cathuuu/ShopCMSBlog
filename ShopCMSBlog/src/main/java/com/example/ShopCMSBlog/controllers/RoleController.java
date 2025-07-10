@@ -1,18 +1,16 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.RoleDto;
-import com.example.ShopCMSBlog.entites.RoleEntity;
-import com.example.ShopCMSBlog.entites.UserEntity;
 import com.example.ShopCMSBlog.mappers.RoleMapper;
 import com.example.ShopCMSBlog.services.RoleService;
-import com.example.ShopCMSBlog.services.UserService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/roles")
+@RequestMapping(UrlUtils.Role_URL)
 public class RoleController {
     private final RoleService roleService;
 

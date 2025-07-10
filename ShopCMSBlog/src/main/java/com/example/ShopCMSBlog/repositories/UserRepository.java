@@ -11,4 +11,5 @@ import java.util.Optional;
 public interface UserRepository extends CommonRepository<UserEntity, Long> {
     List<UserEntity> findByIdAndUsername(Long id, String username);
 
+    Optional<UserEntity> findByUsername(String username);
 }

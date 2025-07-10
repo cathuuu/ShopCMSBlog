@@ -1,19 +1,14 @@
 package com.example.ShopCMSBlog.controllers;
 
-import com.example.ShopCMSBlog.dtos.ProductDto;
 import com.example.ShopCMSBlog.entites.ProductEntity;
-import com.example.ShopCMSBlog.entites.RoleEntity;
-import com.example.ShopCMSBlog.mappers.ProductMapper;
 import com.example.ShopCMSBlog.services.ProductService;
-import com.example.ShopCMSBlog.services.RoleService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
-
-    @RestController
-    @RequestMapping("/api/v1/products")
+@RestController
+    @RequestMapping(UrlUtils.Product_URL)
     public class ProductController {
         private final ProductService productService;
 

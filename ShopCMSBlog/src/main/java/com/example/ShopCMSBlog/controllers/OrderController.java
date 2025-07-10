@@ -1,17 +1,13 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.OrderDto;
-import com.example.ShopCMSBlog.dtos.PostDto;
 import com.example.ShopCMSBlog.services.OrderService;
-import com.example.ShopCMSBlog.services.PostService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Objects;
-
 @RestController
-@RequestMapping("/api/v1/posts")
+@RequestMapping(UrlUtils.Order_URL)
 public class OrderController {
     private final OrderService orderService;
 

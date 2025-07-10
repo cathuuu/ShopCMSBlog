@@ -1,14 +1,13 @@
 package com.example.ShopCMSBlog.controllers;
 
-import com.example.ShopCMSBlog.dtos.CartDto;
 import com.example.ShopCMSBlog.dtos.CartItemDto;
 import com.example.ShopCMSBlog.services.CartItemService;
-import com.example.ShopCMSBlog.services.CartService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/suppliers")
+@RequestMapping(UrlUtils.CartItem_URL)
 public class CartItiemController {
 
 
@@ -26,7 +25,7 @@ public class CartItiemController {
         return ResponseEntity.ok(result);
     }
 
-    @GetMapping()
+    @GetMapping("/findbycart")
     public ResponseEntity<Object> getCartItemByCart(@RequestParam Long id) {
         var result = cartItiemService.getItemsByCart(id);
         return ResponseEntity.ok(result);

@@ -1,12 +1,10 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.ProductReviewDto;
-import com.example.ShopCMSBlog.entites.ProductEntity;
 import com.example.ShopCMSBlog.entites.ProductReviewEntity;
-import com.example.ShopCMSBlog.mappers.ProductMapper;
 import com.example.ShopCMSBlog.mappers.ProductReviewMapper;
 import com.example.ShopCMSBlog.services.ProductReviewService;
-import com.example.ShopCMSBlog.services.ProductService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +14,7 @@ import java.util.List;
 
     @Slf4j
     @RestController
-    @RequestMapping("/api/v1/productreviews")
+    @RequestMapping(UrlUtils.ProductReview_URL)
     public class ProductReviewController {
         private final ProductReviewService productReviewService;
 

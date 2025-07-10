@@ -2,11 +2,12 @@ package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.CartDto;
 import com.example.ShopCMSBlog.services.CartService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/suppliers")
+@RequestMapping(UrlUtils.Cart_URL)
 public class CartController {
 
 

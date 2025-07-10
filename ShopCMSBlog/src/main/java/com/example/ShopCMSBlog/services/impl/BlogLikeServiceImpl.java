@@ -20,16 +20,11 @@ public class BlogLikeServiceImpl extends CommonServiceImpl<BlogLikeEntity, Long,
     }
 
     @Override
-    public BlogLikeDto getLikeById(Long id) {
+    public BlogLikeDto findLikeById(Long id) {
         BlogLikeEntity blogLikeEntity = repo.findById(id).get();
         return blogLikeMapper.toDto(blogLikeEntity);
     }
 
-    @Override
-    public List<BlogLikeDto> getLikesByPost(Long postId) {
-        List<BlogLikeEntity> blogLikeEntities = repo.findAllById(Collections.singleton(postId));
-        return blogLikeMapper.toDtoList(blogLikeEntities);
-    }
 
     @Override
     public BlogLikeDto createLike(BlogLikeDto like) {
@@ -45,5 +40,11 @@ public class BlogLikeServiceImpl extends CommonServiceImpl<BlogLikeEntity, Long,
 
         repo.delete(blogLikeToDelete);
         return blogLikeMapper.toDto(blogLikeToDelete);
+    }
+
+    @Override
+    public List<BlogLikeDto> findByPost(Long postId) {
+        List<BlogLikeEntity> blogLikeEntities = repo.findByPostId(postId);
+        return blogLikeMapper.toDtoList(blogLikeEntities);
     }
 }

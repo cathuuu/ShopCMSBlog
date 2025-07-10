@@ -33,6 +33,11 @@ public class RoleServiceImpl extends CommonServiceImpl<RoleEntity, Long, RoleRep
     }
 
     @Override
+    public List<RoleEntity> findAllByIdIn(List<Long> roleIds) {
+        return repo.findAllById(roleIds);
+    }
+
+    @Override
     public RoleDto save(RoleDto dto) {
         validateWhenCreateOrUpdate(dto);
         RoleEntity roleEntity = RoleMapper.toEntity(dto);

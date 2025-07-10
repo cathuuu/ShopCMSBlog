@@ -1,18 +1,13 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.PostDto;
-import com.example.ShopCMSBlog.entites.ProductReviewEntity;
-import com.example.ShopCMSBlog.mappers.PostMapper;
-import com.example.ShopCMSBlog.mappers.UserMapper;
 import com.example.ShopCMSBlog.services.PostService;
+import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Objects;
-
 @RestController
-@RequestMapping("/api/v1/posts")
+@RequestMapping(UrlUtils.Posts_URL)
 public class PostController {
     private final PostService postService;
 
