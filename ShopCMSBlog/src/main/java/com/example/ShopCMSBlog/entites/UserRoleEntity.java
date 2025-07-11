@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 @Entity
-@Table(name = "USER_ROLE")
+@Table(name = "USER_ROLES")
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserRoleEntity extends BaseEntity {
