@@ -4,11 +4,12 @@ import com.example.ShopCMSBlog.exceptions.AppException;
 import com.example.ShopCMSBlog.repositories.CommonRepository;
 import com.example.ShopCMSBlog.services.CommonService;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
 
-public class CommonServiceImpl<E, ID, R extends CommonRepository<E, ID>> implements CommonService<E, ID> {
+public class CommonServiceImpl<E, ID extends Serializable , R extends CommonRepository<E, ID>> implements CommonService<E, ID> {
     public CommonServiceImpl(R repo) {
         this.repo = repo;
     }

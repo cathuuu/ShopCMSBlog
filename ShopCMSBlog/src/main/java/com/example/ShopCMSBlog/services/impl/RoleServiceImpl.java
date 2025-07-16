@@ -2,6 +2,7 @@ package com.example.ShopCMSBlog.services.impl;
 
 import com.example.ShopCMSBlog.dtos.RoleDto;
 import com.example.ShopCMSBlog.entites.RoleEntity;
+import com.example.ShopCMSBlog.enums.RoleEnum;
 import com.example.ShopCMSBlog.mappers.RoleMapper;
 import com.example.ShopCMSBlog.repositories.RoleRepository;
 import com.example.ShopCMSBlog.services.RoleService;
@@ -20,7 +21,7 @@ public class RoleServiceImpl extends CommonServiceImpl<RoleEntity, Long, RoleRep
     }
 
     @Override
-    public List<RoleDto> findByIdAndName(Long id, String name) {
+    public List<RoleDto> findByIdAndName(Long id, RoleEnum name) {
         return repo.findByIdAndName(id, name);
     }
 
@@ -39,16 +40,16 @@ public class RoleServiceImpl extends CommonServiceImpl<RoleEntity, Long, RoleRep
 
     @Override
     public RoleDto save(RoleDto dto) {
-        validateWhenCreateOrUpdate(dto);
+        //validateWhenCreateOrUpdate(dto);
         RoleEntity roleEntity = RoleMapper.toEntity(dto);
         roleEntity = repo.save(roleEntity);
         return RoleMapper.toDto(roleEntity);
     }
 
-    private void validateWhenCreateOrUpdate(RoleDto dto) {
-        String roleName = dto.getName();
-        if (roleName == null || roleName.trim().isEmpty()) {
-            throw new RuntimeException("Customer name is required");
-        }
-    }
+//    private void validateWhenCreateOrUpdate(RoleDto dto) {
+//        String roleName = dto.getName();
+//        if (roleName == null || roleName.trim().isEmpty()) {
+//            throw new RuntimeException("Customer name is required");
+//        }
+//    }
 }

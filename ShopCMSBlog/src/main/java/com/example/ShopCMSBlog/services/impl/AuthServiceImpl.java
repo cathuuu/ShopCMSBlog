@@ -14,7 +14,6 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private JwtTokenComponent jwtUtil;
 
-
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -23,7 +22,6 @@ public class AuthServiceImpl implements AuthService {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword())
         );
-
         return jwtUtil.generateAccessToken(loginDto.getUsername());
     }
 }

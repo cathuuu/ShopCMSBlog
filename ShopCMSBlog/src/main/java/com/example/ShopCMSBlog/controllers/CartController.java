@@ -44,7 +44,7 @@ public class CartController {
     }
 
     @DeleteMapping()
-    public ResponseEntity<Object> deleteSupplier(@RequestParam Long id) {
+    public ResponseEntity<Object> deleteCart(@RequestParam Long id) {
         cartService.deleteCart(id);
         return ResponseEntity.noContent().build();
     }

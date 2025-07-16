@@ -27,11 +27,11 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(AppException.class)
-    public ResponseEntity<DataResponseModel> handleAppException(AppException ex) {
+    public ResponseEntity<DataResponseModel> handleBaseException(AppException ex) {
         var errorModel = ex.getErrorModel();
-        var messageError = errorModel != null ? ex.getErrorModel() :ex.getMessage();
-        DataResponseModel dataResponseModel= new DataResponseModel<>(null, errorModel.getMessage(),INTERNAL_SERVER_ERROR);
-        return new ResponseEntity<>(dataResponseModel, HttpStatus.INTERNAL_SERVER_ERROR);
+        var messageError = errorModel !=null ? ex.getErrorModel().getMessage() : ex.getMessage();
+        DataResponseModel dataResponse = new DataResponseModel(null, messageError, INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(dataResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

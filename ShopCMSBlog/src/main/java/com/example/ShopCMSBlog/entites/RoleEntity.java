@@ -1,5 +1,6 @@
 package com.example.ShopCMSBlog.entites;
 
+import com.example.ShopCMSBlog.enums.RoleEnum;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -18,5 +19,5 @@ public class RoleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @Column(name ="name", unique = true, nullable = false)
-    String name;
+    RoleEnum name;
 }

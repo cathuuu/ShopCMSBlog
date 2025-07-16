@@ -17,25 +17,25 @@ public class OrderController {
 
 
     @GetMapping("/search")
-    public ResponseEntity<Object> getUsers(@RequestParam Long id) {
+    public ResponseEntity<Object> getOrder(@RequestParam Long id) {
         var result = orderService.getOrdersByCustomerId(id);
         return ResponseEntity.ok(result);
     }
 
     @GetMapping()
-    public ResponseEntity<Object> findAllUsers() {
+    public ResponseEntity<Object> findAllOrders() {
         var result = orderService.getAll();
         return ResponseEntity.ok(result);
     }
 
     @PostMapping()
-    public ResponseEntity<Object> save(@RequestBody OrderDto user) {
+    public ResponseEntity<Object> saveOrder(@RequestBody OrderDto user) {
         var result = orderService.save(user);
         return ResponseEntity.ok(result);
     }
 
     @DeleteMapping()
-    public ResponseEntity<Object> deleteUser(@RequestParam Long id) {
+    public ResponseEntity<Object> deleteOrder(@RequestParam Long id) {
         orderService.deleteOrder(id);
         return ResponseEntity.noContent().build();
     }

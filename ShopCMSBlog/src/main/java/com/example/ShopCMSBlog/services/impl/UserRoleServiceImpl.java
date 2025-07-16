@@ -1,6 +1,7 @@
 package com.example.ShopCMSBlog.services.impl;
 
 import com.example.ShopCMSBlog.entites.UserRoleEntity;
+import com.example.ShopCMSBlog.entites.UserRoleId;
 import com.example.ShopCMSBlog.repositories.UserRoleRepository;
 import com.example.ShopCMSBlog.services.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserRoleServiceImpl extends CommonServiceImpl<UserRoleEntity, Long, UserRoleRepository> implements UserRoleService {
+public class UserRoleServiceImpl extends CommonServiceImpl<UserRoleEntity, UserRoleId, UserRoleRepository> implements UserRoleService {
 
     @Autowired
     private UserRoleRepository repository;

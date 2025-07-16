@@ -54,7 +54,7 @@ public class SecurityConfig {
                 .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.sameOrigin()))
                 .authorizeHttpRequests(auth -> auth
                                 .requestMatchers(UrlUtils.PUBLIC_URLS.toArray(new String[0])).permitAll()
-//                        .requestMatchers("/error").permitAll()
+                    .requestMatchers("/error").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))

@@ -5,6 +5,7 @@ import com.example.ShopCMSBlog.entites.BlogLikeEntity;
 import com.example.ShopCMSBlog.services.BlogLikeService;
 import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class BlogLikeController {
         this.blogLikeService = blogLikeService;
     }
 
-
+    @Secured("ADMIN")
     @GetMapping("/findbyid")
     public ResponseEntity<Object> findLikeById(@RequestParam Long id) {
         var result = blogLikeService.findLikeById(id);

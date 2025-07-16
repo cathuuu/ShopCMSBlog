@@ -1,5 +1,6 @@
 package com.example.ShopCMSBlog.services.impl;
 
+import com.example.ShopCMSBlog.Components.BaseNativeQuery;
 import com.example.ShopCMSBlog.dtos.ProductReviewDto;
 import com.example.ShopCMSBlog.entites.ProductEntity;
 import com.example.ShopCMSBlog.entites.ProductReviewEntity;
@@ -8,14 +9,23 @@ import com.example.ShopCMSBlog.mappers.ProductMapper;
 import com.example.ShopCMSBlog.mappers.ProductReviewMapper;
 import com.example.ShopCMSBlog.repositories.ProductReviewRepository;
 import com.example.ShopCMSBlog.services.ProductReviewService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
 public class ProductReviewServiceImpl extends CommonServiceImpl<ProductReviewEntity, Long, ProductReviewRepository> implements ProductReviewService {
     private final ProductReviewMapper productReviewMapper;
+    @Autowired
+    private BaseNativeQuery baseNativeQuery;
     public ProductReviewServiceImpl(ProductReviewRepository repo, ProductReviewMapper productReviewMapper) {
         super(repo);
         this.productReviewMapper = productReviewMapper;

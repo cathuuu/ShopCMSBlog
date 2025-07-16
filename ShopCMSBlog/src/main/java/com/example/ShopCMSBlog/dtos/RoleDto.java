@@ -1,5 +1,6 @@
 package com.example.ShopCMSBlog.dtos;
 
+import com.example.ShopCMSBlog.enums.RoleEnum;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,5 +13,5 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class RoleDto {
     Long id;
-    String name;
+    RoleEnum name;
 }

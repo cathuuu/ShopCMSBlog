@@ -37,7 +37,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
         if(userRoles.isEmpty()){
             return CustomUserDetail.build(user, new ArrayList<>());
         }
-        List<Long> roleIds = userRoles.stream().map(userRole -> userRole.getRoleId()).toList();
+        List<Long> roleIds = userRoles.stream().map(userRole -> userRole.getId().getRoleId()).toList();
         List<RoleEntity> roles = roleService.findAllByIdIn(roleIds);
         return CustomUserDetail.build(user,roles);
     }

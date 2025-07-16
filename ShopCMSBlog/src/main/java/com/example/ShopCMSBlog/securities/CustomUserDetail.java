@@ -70,7 +70,7 @@ public class CustomUserDetail implements UserDetails {
 
     public static CustomUserDetail build(UserEntity user, List<RoleEntity> roles) {
         Collection<? extends GrantedAuthority> authorities = roles.stream()
-                .map(role -> new SimpleGrantedAuthority(role.getName()))
+                .map(role -> new SimpleGrantedAuthority(role.getName().name()))
                 .collect(Collectors.toList());
 
         return new CustomUserDetail(

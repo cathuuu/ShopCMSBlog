@@ -2,9 +2,10 @@ package com.example.ShopCMSBlog.services;
 
 import com.example.ShopCMSBlog.exceptions.AppException;
 
+import java.io.Serializable;
 import java.util.List;
 
-public interface CommonService<E, ID> {
+public interface CommonService<E, ID extends Serializable> {
     List<E> getAll();
 
     E getById(ID id) throws AppException;

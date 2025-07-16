@@ -4,6 +4,7 @@ import com.example.ShopCMSBlog.dtos.RoleDto;
 import com.example.ShopCMSBlog.dtos.SupplierDto;
 import com.example.ShopCMSBlog.entites.RoleEntity;
 import com.example.ShopCMSBlog.entites.SupplierEntity;
+import com.example.ShopCMSBlog.enums.RoleEnum;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

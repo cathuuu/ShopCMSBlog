@@ -37,19 +37,19 @@ public class CartItiemController {
     }
 
     @PostMapping()
-    public ResponseEntity<Object> createCart(@RequestBody CartItemDto dto) {
+    public ResponseEntity<Object> createCartItiem(@RequestBody CartItemDto dto) {
         var result = cartItiemService.saveCartItem(dto);
         return ResponseEntity.ok(result);
     }
 
     @PutMapping()
-    public ResponseEntity<Object> updateCart(@RequestBody CartItemDto dto) {
+    public ResponseEntity<Object> updateCartItiem(@RequestBody CartItemDto dto) {
         var result = cartItiemService.saveCartItem(dto);
         return ResponseEntity.ok(result);
     }
 
     @DeleteMapping()
-    public ResponseEntity<Object> deleteSupplier(@RequestParam Long id) {
+    public ResponseEntity<Object> deleteCartItiem(@RequestParam Long id) {
         cartItiemService.deleteCartItem(id);
         return ResponseEntity.noContent().build();
     }
