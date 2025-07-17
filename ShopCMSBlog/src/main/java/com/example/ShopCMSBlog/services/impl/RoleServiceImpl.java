@@ -9,6 +9,7 @@ import com.example.ShopCMSBlog.services.RoleService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RoleServiceImpl extends CommonServiceImpl<RoleEntity, Long, RoleRepository> implements RoleService {
@@ -31,6 +32,11 @@ public class RoleServiceImpl extends CommonServiceImpl<RoleEntity, Long, RoleRep
                 new RuntimeException("cann't find role with id: " + id));
         repo.delete(roleEntity);
         return RoleMapper.toDto(roleEntity); // Trả về đối tượng đã xóa
+    }
+
+    @Override
+    public Optional<RoleEntity> findByName(RoleEnum  name) {
+        return repo.findByName(name);
     }
 
     @Override

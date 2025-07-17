@@ -1,6 +1,8 @@
 package com.example.ShopCMSBlog.dtos;
 
 import com.example.ShopCMSBlog.enums.RoleEnum;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;

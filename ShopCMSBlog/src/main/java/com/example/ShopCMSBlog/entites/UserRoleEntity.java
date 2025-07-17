@@ -2,13 +2,16 @@ package com.example.ShopCMSBlog.entites;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @Entity
 @Table(name = "user_roles")
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
+
 public class UserRoleEntity {
     @EmbeddedId
     private UserRoleId id; // Sử dụng lớp khóa chính tổng hợp
