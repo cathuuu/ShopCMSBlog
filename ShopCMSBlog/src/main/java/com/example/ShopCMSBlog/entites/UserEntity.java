@@ -26,6 +26,7 @@ public class UserEntity {
     String password;
     @Column(name = "email", unique = true, nullable = false)
     String email;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name ="role_id"))
