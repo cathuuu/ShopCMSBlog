@@ -1,6 +1,7 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.CategoryDto;
+import com.example.ShopCMSBlog.dtos.Queries.CategoryQueryDto;
 import com.example.ShopCMSBlog.services.CategoryService;
 import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +21,8 @@ public class CategoryController {
 
 
     @GetMapping("/search")
-    public ResponseEntity<Object> getCategoryById(@RequestParam Long id) {
-        var result = categoryService.getCategoryById(id);
+    public ResponseEntity<Object> getCategoryById(@RequestBody CategoryQueryDto categoryQueryDto) {
+        var result = categoryService.getCategory(categoryQueryDto);
         return ResponseEntity.ok(result);
     }
 

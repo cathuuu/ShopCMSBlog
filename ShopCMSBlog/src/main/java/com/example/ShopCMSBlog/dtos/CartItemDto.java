@@ -15,8 +15,8 @@ import java.time.LocalDateTime;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CartItemDto {
      Long id;
-     CartDto cart;
-     ProductDto product;
+     Long cartId;
+     Long productId;
      Integer quantity;
      BigDecimal price;
      LocalDateTime addedAt;

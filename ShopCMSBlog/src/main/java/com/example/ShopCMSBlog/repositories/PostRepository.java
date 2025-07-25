@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PostRepository extends CommonRepository<PostEntity, Long> {
+public interface PostRepository extends CommonRepository<PostEntity, Long>, PostRepositoryCustom {
 
     List<PostDto> getPostByIdAndTitle(Long id, String title);
 }

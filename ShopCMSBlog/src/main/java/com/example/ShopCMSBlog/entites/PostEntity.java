@@ -33,7 +33,6 @@ public class PostEntity {
     @Column(name = "created_at")
     LocalDateTime createdAt = LocalDateTime.now();
 
-    @ManyToOne
-    @JoinColumn(name = "author_id")
-    private UserEntity author;
+    @Column(name = "author_id")
+    Long authorId;
 }

@@ -1,5 +1,7 @@
 package com.example.ShopCMSBlog.controllers;
 
+import com.example.ShopCMSBlog.dtos.ProductDto;
+import com.example.ShopCMSBlog.dtos.Queries.ProductQueryDto;
 import com.example.ShopCMSBlog.entites.CustomerEntity;
 import com.example.ShopCMSBlog.entites.ProductEntity;
 import com.example.ShopCMSBlog.enums.Gender;
@@ -27,8 +29,8 @@ import java.time.LocalDate;
 
 
         @GetMapping("/search")
-        public ResponseEntity<Object> getProduct(@RequestParam Long id, @RequestParam String name) {
-            var result = productService.findByIdAndName(id, name);
+        public ResponseEntity<Object> getProduct(@RequestBody ProductQueryDto productQueryDto) {
+            var result = productService.getProduct(productQueryDto);
             return ResponseEntity.ok(result);
         }
 

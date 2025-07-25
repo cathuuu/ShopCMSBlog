@@ -30,10 +30,8 @@ public class ProductEntity {
     Integer stokeQuantity;
     @Column(name ="image_url")
     String imageUrl;
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    CategoryEntity category;
-    @ManyToOne
-    @JoinColumn(name = "supplier_id")
-    SupplierEntity supplier;
+    @Column(name = "category_id")
+    Long categoryId;
+    @Column(name = "supplier_id")
+    Long supplierId;
 }

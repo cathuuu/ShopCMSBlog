@@ -1,6 +1,7 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.CartDto;
+import com.example.ShopCMSBlog.dtos.Queries.CartQueryDto;
 import com.example.ShopCMSBlog.services.CartService;
 import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +21,8 @@ public class CartController {
 
 
     @GetMapping("/search")
-    public ResponseEntity<Object> getCartByCustomerId(@RequestParam Long id) {
-        var result = cartService.getCartByCustomerId(id);
+    public ResponseEntity<Object> getCart(@RequestBody CartQueryDto cartQueryDto) {
+        var result = cartService.getCart(cartQueryDto);
         return ResponseEntity.ok(result);
     }
 

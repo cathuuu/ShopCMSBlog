@@ -33,9 +33,7 @@ public class CustomerEntity {
     Gender gender;
     @Column(name ="date_of_birth")
     LocalDate dateOfBirth;
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "id")
-    UserEntity user;
+    @Column(name = "user_id")
+    Long userId;
 
 }

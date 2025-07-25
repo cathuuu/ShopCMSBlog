@@ -26,8 +26,8 @@ public class AuthController {
         return ResponseEntity.ok(token);
     }
     @PostMapping("/register")
-    public ResponseEntity<String> register(@Valid @RequestBody RegisterDto authRequest) throws RoleNotFoundException {
-        String token = authService.register(authRequest);
+    public ResponseEntity<String> register(@Valid @RequestBody RegisterDto dto) throws RoleNotFoundException {
+        String token = authService.register(dto);
         return ResponseEntity.ok(token);
     }
 }

@@ -58,7 +58,7 @@ public class BaseNativeQuery {
 
     public <T> Page<T> findPage(String sql, String countSql, Pageable pageable, Class<T> type, Map<String, Object> params) {
         String paginatedSql = sql + " LIMIT :limit OFFSET :offset";
-        long pageCurrent = pageable.getOffset();
+        long pageCurrent = pageable.getPageNumber();
         long pageSize = pageable.getPageSize();
         if(pageCurrent <= 0) throw new AppException("Pagecurent is other zero");
         Map<String, Object> paginatedParams = new HashMap<>(params);

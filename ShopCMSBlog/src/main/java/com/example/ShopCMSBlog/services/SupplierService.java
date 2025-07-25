@@ -1,5 +1,6 @@
 package com.example.ShopCMSBlog.services;
 
+import com.example.ShopCMSBlog.dtos.Queries.SupplierQueryDto;
 import com.example.ShopCMSBlog.dtos.SupplierDto;
 import com.example.ShopCMSBlog.entites.SupplierEntity;
 import com.example.ShopCMSBlog.entites.UserEntity;
@@ -19,10 +20,10 @@ public interface SupplierService extends CommonService<SupplierEntity, Long> {
 
     Page<SupplierEntity> getAllSuppliers(Pageable pageable);
 
-    Page<SupplierEntity> searchSuppliers(String name, String contactName, String email, String phoneNumber, Pageable pageable);
-
     Optional<SupplierEntity> getSupplierById(Long id);
 
     List<SupplierEntity> getSuppliersByAddress(String address);
+
+    Page<SupplierDto>getSupplies(SupplierQueryDto supplierQueryDto);
 }
 

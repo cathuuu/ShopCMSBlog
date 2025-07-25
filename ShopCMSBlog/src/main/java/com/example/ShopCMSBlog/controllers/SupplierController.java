@@ -1,5 +1,6 @@
 package com.example.ShopCMSBlog.controllers;
 
+import com.example.ShopCMSBlog.dtos.Queries.SupplierQueryDto;
 import com.example.ShopCMSBlog.dtos.SupplierDto;
 import com.example.ShopCMSBlog.entites.SupplierEntity;
 import com.example.ShopCMSBlog.entites.UserEntity;
@@ -27,12 +28,7 @@ public class SupplierController {
         this.supplierService = supplierService;
     }
 
-    @Secured("ADMIN")
-    @GetMapping("/search")
-    public ResponseEntity<Object> getSupplier(@RequestParam Long id, @RequestParam String name) {
-        var result = supplierService.findByIdAndName(id, name);
-        return ResponseEntity.ok(result);
-    }
+
     @Secured("ADMIN")
     @GetMapping()
     public ResponseEntity<Object> findAllSuppliers() {
@@ -70,17 +66,10 @@ public class SupplierController {
         List<SupplierEntity> suppliers = supplierService.getSuppliersByAddress(address);
         return new ResponseEntity<>(suppliers, HttpStatus.OK);
     }
-    @GetMapping("PagedNative")
-    public ResponseEntity<Page<SupplierEntity>> getAllSuppliers(
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size,
-            @RequestParam(defaultValue = "name") String sortBy,
-            @RequestParam(defaultValue = "asc") String sortDir
-    ) {
-        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ?
-                Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
-        Pageable pageable = PageRequest.of(page, size, sort);
-        Page<SupplierEntity> suppliersPage = supplierService.getAllSuppliers(pageable);
-        return new ResponseEntity<>(suppliersPage, HttpStatus.OK);
+//    @Secured("ADMIN")
+    @GetMapping("/search")
+    public ResponseEntity<Object> getSupplies(@RequestBody SupplierQueryDto supplierQueryDto) {
+        var result = supplierService.getSupplies(supplierQueryDto);
+        return ResponseEntity.ok(result);
     }
 }

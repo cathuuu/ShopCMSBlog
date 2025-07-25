@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface SupplierRepository extends CommonRepository<SupplierEntity, Long>,SupplierRepositoryCustom {
+public interface SupplierRepository extends CommonRepository<SupplierEntity, Long>, SupplierRepositoryCustom {
     List<SupplierDto> findByIdAndName(Long id, String name);
 }

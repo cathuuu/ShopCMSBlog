@@ -22,13 +22,11 @@ public class CartItemEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "cart_id")
-    CartEntity cart;
+    @Column(name = "cart_id")
+    Long cartId;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    ProductEntity product;
+    @Column(name = "product_id")
+    Long productId;
 
     @Column(name = "quantity", nullable = false)
     Integer quantity;

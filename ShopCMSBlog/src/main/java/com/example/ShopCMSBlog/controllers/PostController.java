@@ -1,6 +1,7 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.PostDto;
+import com.example.ShopCMSBlog.dtos.Queries.PostQueryDto;
 import com.example.ShopCMSBlog.services.PostService;
 import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
@@ -16,14 +17,8 @@ public class PostController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<Object> getUsers(@RequestParam Long id, @RequestParam String title) {
-        var result = postService.getPostByIdAndTitle(id, title);
-        return ResponseEntity.ok(result);
-    }
-
-    @GetMapping()
-    public ResponseEntity<Object> findAllUsers() {
-        var result = postService.getAll();
+    public ResponseEntity<Object> getPost(@RequestParam PostQueryDto postQueryDto) {
+        var result = postService.getPost(postQueryDto);
         return ResponseEntity.ok(result);
     }
 

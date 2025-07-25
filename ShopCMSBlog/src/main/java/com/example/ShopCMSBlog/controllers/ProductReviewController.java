@@ -1,6 +1,7 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.ProductReviewDto;
+import com.example.ShopCMSBlog.dtos.Queries.ProductReviewQueryDto;
 import com.example.ShopCMSBlog.entites.ProductEntity;
 import com.example.ShopCMSBlog.entites.ProductReviewEntity;
 import com.example.ShopCMSBlog.mappers.ProductReviewMapper;
@@ -31,16 +32,9 @@ import java.util.List;
 
 
         @GetMapping("/search")
-        public ResponseEntity<Object> findByIdAndComment(@RequestParam Long id, @RequestParam String comment) {
-            var result = productReviewService.findByIdAndComment(id, comment);
+        public ResponseEntity<Object> findAll(@RequestBody ProductReviewQueryDto productReviewQueryDto) {
+            var result = productReviewService.getProductReview(productReviewQueryDto);
             return ResponseEntity.ok(result);
-        }
-
-        @GetMapping()
-        public ResponseEntity<Object> findAll() {
-            var result = productReviewService.getAll();
-            List<ProductReviewDto> list = ProductReviewMapper.toDtoList(result);
-            return ResponseEntity.ok(list);
         }
 
         @PostMapping()

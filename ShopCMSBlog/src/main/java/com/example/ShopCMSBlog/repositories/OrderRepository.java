@@ -5,7 +5,7 @@ import com.example.ShopCMSBlog.entites.OrderEntity;
 
 import java.util.List;
 
-public interface OrderRepository extends CommonRepository<OrderEntity, Long> {
+public interface OrderRepository extends CommonRepository<OrderEntity, Long>, OrderRepositoryCustom {
     OrderDto getOrderById(Long id);
 
     List<OrderDto> getOrdersByCustomerId(Long customerId);

@@ -1,11 +1,13 @@
 package com.example.ShopCMSBlog.services.impl;
 
 import com.example.ShopCMSBlog.dtos.BlogLikeDto;
+import com.example.ShopCMSBlog.dtos.Queries.BlogLikeQueryDto;
 import com.example.ShopCMSBlog.entites.BlogLikeEntity;
 import com.example.ShopCMSBlog.entites.UserEntity;
 import com.example.ShopCMSBlog.mappers.BlogLikeMapper;
 import com.example.ShopCMSBlog.repositories.BlogLikeRepository;
 import com.example.ShopCMSBlog.services.BlogLikeService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -46,5 +48,10 @@ public class BlogLikeServiceImpl extends CommonServiceImpl<BlogLikeEntity, Long,
     public List<BlogLikeDto> findByPost(Long postId) {
         List<BlogLikeEntity> blogLikeEntities = repo.findByPostId(postId);
         return blogLikeMapper.toDtoList(blogLikeEntities);
+    }
+
+    @Override
+    public Page<BlogLikeDto> getBlogLike(BlogLikeQueryDto blogLikeQueryDto) {
+        return repo.getBlogLike(blogLikeQueryDto);
     }
 }

@@ -15,8 +15,8 @@ public class CartItemMapper {
     public static CartItemDto toDto(CartItemEntity entity) {
         CartItemDto dto = new CartItemDto();
         dto.setId(entity.getId());
-        dto.setCart(CartMapper.toDto(entity.getCart()));
-        dto.setProduct(ProductMapper.toDto(entity.getProduct()));
+        dto.setCartId(entity.getCartId());
+        dto.setProductId(entity.getProductId());
         dto.setQuantity(entity.getQuantity());
         dto.setPrice(entity.getPrice());
         dto.setAddedAt(entity.getAddedAt());
@@ -25,8 +25,8 @@ public class CartItemMapper {
     public static CartItemEntity toEntity(CartItemDto dto) {
         CartItemEntity entity = new CartItemEntity();
         entity.setId(dto.getId());
-        entity.setCart(CartMapper.toEntity(dto.getCart()));
-        entity.setProduct(ProductMapper.toEntity(dto.getProduct()));
+        entity.setCartId(dto.getCartId());
+        entity.setProductId(dto.getProductId());
         entity.setQuantity(dto.getQuantity());
         entity.setPrice(dto.getPrice());
         entity.setAddedAt(dto.getAddedAt());

@@ -13,8 +13,8 @@ public class CommentMapper {
     public static CommentDto toDto(CommentEntity entity) {
         CommentDto dto = new CommentDto();
         dto.setId(entity.getId());
-        dto.setPost(PostMapper.toDto(entity.getPost()));
-        dto.setUser(UserMapper.toDto(entity.getUser()));
+        dto.setPostId(entity.getPostId());
+        dto.setUserId(entity.getUserId());
         dto.setContent(entity.getContent());
         dto.setCreatedAt(entity.getCreatedAt());
         return dto;
@@ -22,8 +22,8 @@ public class CommentMapper {
     public static CommentEntity toEntity(CommentDto dto) {
         CommentEntity entity = new CommentEntity();
         entity.setId(entity.getId());
-        entity.setPost(PostMapper.toEntity(dto.getPost()));
-        entity.setUser(UserMapper.toEntity(dto.getUser(),null));
+        entity.setPostId(dto.getPostId());
+        entity.setUserId(dto.getUserId());
         entity.setContent(entity.getContent());
         entity.setCreatedAt(entity.getCreatedAt());
         return entity;

@@ -15,7 +15,7 @@ public class OrderMapper {
     public static OrderDto toDto(OrderEntity entity) {
         OrderDto dto = new OrderDto();
         dto.setId(entity.getId());
-        dto.setCustomer(CustomerMapper.toDto(entity.getCustomer()));
+        dto.setCustomerId(entity.getCustomerId());
         dto.setTotalAmount(entity.getTotalAmount());
         dto.setStatus(entity.getStatus());
         dto.setCreatedAt(entity.getCreatedAt());
@@ -24,7 +24,7 @@ public class OrderMapper {
     public static OrderEntity toEntity(OrderDto dto) {
         OrderEntity entity = new OrderEntity();
         entity.setId(entity.getId());
-        entity.setCustomer(CustomerMapper.toEntity(dto.getCustomer()));
+        entity.setCustomerId(dto.getCustomerId());
         entity.setTotalAmount(entity.getTotalAmount());
         entity.setStatus(entity.getStatus());
         entity.setCreatedAt(entity.getCreatedAt());

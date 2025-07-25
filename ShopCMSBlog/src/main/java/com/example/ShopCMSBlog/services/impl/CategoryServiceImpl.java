@@ -1,10 +1,12 @@
 package com.example.ShopCMSBlog.services.impl;
 
 import com.example.ShopCMSBlog.dtos.CategoryDto;
+import com.example.ShopCMSBlog.dtos.Queries.CategoryQueryDto;
 import com.example.ShopCMSBlog.entites.CategoryEntity;
 import com.example.ShopCMSBlog.mappers.CategoryMapper;
 import com.example.ShopCMSBlog.repositories.CategoryRepository;
 import com.example.ShopCMSBlog.services.CategoryService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,6 +45,11 @@ public class CategoryServiceImpl extends CommonServiceImpl<CategoryEntity, Long,
 
         repo.delete(CategoryToDelete);
         return categoryMapper.toDto(CategoryToDelete);
+    }
+
+    @Override
+    public Page<CategoryDto> getCategory(CategoryQueryDto categoryQueryDto) {
+        return repo.getCategory(categoryQueryDto);
     }
 
 }

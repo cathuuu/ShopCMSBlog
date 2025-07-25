@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ProductRepository extends CommonRepository<ProductEntity, Long>{
+public interface ProductRepository extends CommonRepository<ProductEntity, Long>, ProductRepositoryCustom {
     List<ProductDto> findByIdAndName(Long id, String name);
 }

@@ -21,5 +21,5 @@ public class CustomerDto {
     String address;
     Gender gender;
     LocalDate dateOfBirth;
-    UserDto user;
+    Long userId;
 }

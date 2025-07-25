@@ -20,13 +20,13 @@ public class BlogLikeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "post_id")
-    PostEntity post;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    UserEntity user;
+    @Column(name = "post_id")
+    Long postId;
+
+
+    @Column(name = "user_id")
+    Long userId;
 
     @Column(name = "created_at")
     LocalDateTime createdAt = LocalDateTime.now();

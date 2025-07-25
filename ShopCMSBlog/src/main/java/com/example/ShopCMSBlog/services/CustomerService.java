@@ -1,6 +1,9 @@
 package com.example.ShopCMSBlog.services;
 
+import com.example.ShopCMSBlog.dtos.CommentDto;
 import com.example.ShopCMSBlog.dtos.CustomerDto;
+import com.example.ShopCMSBlog.dtos.Queries.CommentQueryDto;
+import com.example.ShopCMSBlog.dtos.Queries.CustomerQueryDto;
 import com.example.ShopCMSBlog.entites.CustomerEntity;
 import com.example.ShopCMSBlog.enums.Gender;
 import org.springframework.data.domain.Page;
@@ -15,4 +18,5 @@ public interface CustomerService extends CommonService<CustomerEntity, Long> {
     List<CustomerDto> getAllCustomers();
     CustomerDto saveCustomer(CustomerDto customer);
     CustomerDto deleteCustomer(Long id);
+    Page<CustomerDto> getCustomer(CustomerQueryDto customerQueryDto);
 }

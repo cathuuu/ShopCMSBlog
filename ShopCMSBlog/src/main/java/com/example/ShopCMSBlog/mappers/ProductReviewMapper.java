@@ -14,8 +14,8 @@ public class ProductReviewMapper {
     public static ProductReviewDto toDto(ProductReviewEntity entity) {
         ProductReviewDto dto = new ProductReviewDto();
         dto.setId(entity.getId());
-        dto.setProduct(ProductMapper.toDto(entity.getProduct()));
-        dto.setCustomer(CustomerMapper.toDto(entity.getCustomer()));
+        dto.setProductId(entity.getProductId());
+        dto.setCustomerId(entity.getCustomerId());
         dto.setRating(entity.getRating());
         dto.setComment(entity.getComment());
         dto.setCreatedAt(entity.getCreatedAt());
@@ -24,8 +24,8 @@ public class ProductReviewMapper {
     public static ProductReviewEntity toEntity(ProductReviewDto dto) {
         ProductReviewEntity entity = new ProductReviewEntity();
         entity.setId(dto.getId());
-        entity.setProduct(ProductMapper.toEntity(dto.getProduct()));
-        entity.setCustomer(CustomerMapper.toEntity(dto.getCustomer()));
+        entity.setProductId(dto.getProductId());
+        entity.setCustomerId(dto.getCustomerId());
         entity.setRating(dto.getRating());
         entity.setComment(dto.getComment());
         entity.setCreatedAt(dto.getCreatedAt());

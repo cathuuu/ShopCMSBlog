@@ -1,10 +1,12 @@
 package com.example.ShopCMSBlog.services.impl;
 
 import com.example.ShopCMSBlog.dtos.CommentDto;
+import com.example.ShopCMSBlog.dtos.Queries.CommentQueryDto;
 import com.example.ShopCMSBlog.entites.CommentEntity;
 import com.example.ShopCMSBlog.mappers.CommentMapper;
 import com.example.ShopCMSBlog.repositories.CommentRepository;
 import com.example.ShopCMSBlog.services.CommentService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,5 +45,10 @@ public class CommentServiceImpl extends CommonServiceImpl<CommentEntity, Long, C
 
         repo.delete(commentToDelete);
         return commentMapper.toDto(commentToDelete);
+    }
+
+    @Override
+    public Page<CommentDto> getComment(CommentQueryDto commentQueryDto) {
+        return repo.getComment(commentQueryDto);
     }
 }

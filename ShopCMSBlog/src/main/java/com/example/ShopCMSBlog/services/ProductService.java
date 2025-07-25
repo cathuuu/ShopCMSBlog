@@ -1,6 +1,9 @@
 package com.example.ShopCMSBlog.services;
 
 import com.example.ShopCMSBlog.dtos.ProductDto;
+import com.example.ShopCMSBlog.dtos.ProductReviewDto;
+import com.example.ShopCMSBlog.dtos.Queries.ProductQueryDto;
+import com.example.ShopCMSBlog.dtos.Queries.ProductReviewQueryDto;
 import com.example.ShopCMSBlog.entites.CustomerEntity;
 import com.example.ShopCMSBlog.entites.ProductEntity;
 import com.example.ShopCMSBlog.entites.RoleEntity;
@@ -17,4 +20,6 @@ public interface ProductService extends CommonService<ProductEntity , Long> {
     ProductDto save(ProductDto productDto);
 
     void delete(Long id);
+
+    Page<ProductDto>getProduct(ProductQueryDto productQueryDto);
 }

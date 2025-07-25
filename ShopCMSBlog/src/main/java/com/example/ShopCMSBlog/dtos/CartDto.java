@@ -15,6 +15,6 @@ import java.time.LocalDateTime;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CartDto {
     Long id;
-    CustomerDto customer;
+    Long customerId;
     LocalDateTime createdAt;
 }

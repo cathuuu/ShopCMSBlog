@@ -18,6 +18,7 @@ public class UrlUtils {
     public static final String Posts_URL = BASE_URL + "/posts";
     public static final String Order_URL = BASE_URL + "/orders";
     public static final String Customer_URL = BASE_URL + "/customers";
+    public static final String Comment_URL = BASE_URL + "/comments";
     public static final String Category_URL = BASE_URL + "/categories";
     public static final String Cart_URL = BASE_URL + "/carts";
     public static final String CartItem_URL = BASE_URL + "/cartitems";

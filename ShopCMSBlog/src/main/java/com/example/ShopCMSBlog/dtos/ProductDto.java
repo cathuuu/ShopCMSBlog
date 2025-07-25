@@ -22,6 +22,6 @@ public class ProductDto {
     BigDecimal price;
     String imageUrl;
     Integer stockQuantity;
-    CategoryDto category;
-    SupplierDto supplier;
+    Long categoryId;
+    Long supplierId;
 }

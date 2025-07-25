@@ -1,9 +1,8 @@
 package com.example.ShopCMSBlog.services.impl;
 
-import com.example.ShopCMSBlog.Components.BaseNativeQuery;
+import com.example.ShopCMSBlog.dtos.Queries.SupplierQueryDto;
 import com.example.ShopCMSBlog.dtos.SupplierDto;
 import com.example.ShopCMSBlog.entites.SupplierEntity;
-import com.example.ShopCMSBlog.entites.UserEntity;
 import com.example.ShopCMSBlog.mappers.SupplierMapper;
 import com.example.ShopCMSBlog.repositories.SupplierRepository;
 import com.example.ShopCMSBlog.services.SupplierService;
@@ -11,10 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -34,7 +32,6 @@ public class SupplierServiceImpl extends CommonServiceImpl<SupplierEntity, Long,
             throw new RuntimeException("Username is required");
         }
     }
-
 
 
     @Override
@@ -63,10 +60,7 @@ public class SupplierServiceImpl extends CommonServiceImpl<SupplierEntity, Long,
     public Page<SupplierEntity> getAllSuppliers(Pageable pageable) {
         return supplierRepository.findAllSuppliersPagedNative(pageable);
     }
-    @Override
-    public Page<SupplierEntity> searchSuppliers(String name, String contactName, String email, String phoneNumber, Pageable pageable) {
-        return supplierRepository.searchSuppliersByCriteriaNative(name, contactName, email, phoneNumber, pageable);
-    }
+
     @Override
     public Optional<SupplierEntity> getSupplierById(Long id) {
         return supplierRepository.findByIdNative(id);
@@ -74,5 +68,10 @@ public class SupplierServiceImpl extends CommonServiceImpl<SupplierEntity, Long,
     @Override
     public List<SupplierEntity> getSuppliersByAddress(String address) {
         return supplierRepository.findSuppliersByAddressNative(address);
+    }
+
+    @Override
+    public Page<SupplierDto> getSupplies(@RequestBody SupplierQueryDto supplierQueryDto) {
+        return repo.getSupplies(supplierQueryDto);
     }
 }

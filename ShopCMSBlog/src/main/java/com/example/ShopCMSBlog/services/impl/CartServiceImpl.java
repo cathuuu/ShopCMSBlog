@@ -1,11 +1,13 @@
 package com.example.ShopCMSBlog.services.impl;
 
 import com.example.ShopCMSBlog.dtos.CartDto;
+import com.example.ShopCMSBlog.dtos.Queries.CartQueryDto;
 import com.example.ShopCMSBlog.entites.CartEntity;
 import com.example.ShopCMSBlog.entites.UserEntity;
 import com.example.ShopCMSBlog.mappers.CartMapper;
 import com.example.ShopCMSBlog.repositories.CartRepository;
 import com.example.ShopCMSBlog.services.CartService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -37,5 +39,10 @@ public class CartServiceImpl extends CommonServiceImpl<CartEntity, Long, CartRep
 
         repo.delete(cartToDelete);
         return cartMapper.toDto(cartToDelete);
+    }
+
+    @Override
+    public Page<CartDto> getCart(CartQueryDto cartQueryDto) {
+        return repo.getCart(cartQueryDto);
     }
 }

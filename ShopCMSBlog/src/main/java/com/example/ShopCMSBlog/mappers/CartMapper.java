@@ -16,14 +16,14 @@ public class CartMapper {
     public static CartDto toDto(CartEntity entity) {
         CartDto dto = new CartDto();
         dto.setId(entity.getId());
-        dto.setCustomer(CustomerMapper.toDto(entity.getCustomer()));
+        dto.setCustomerId(entity.getCustomerId());
         dto.setCreatedAt(entity.getCreatedAt());
         return dto;
     }
     public static CartEntity toEntity(CartDto dto) {
         CartEntity entity = new CartEntity();
         entity.setId(dto.getId());
-        entity.setCustomer(CustomerMapper.toEntity(dto.getCustomer()));
+        entity.setCustomerId(dto.getCustomerId());
         entity.setCreatedAt(dto.getCreatedAt());
         return entity;
     }

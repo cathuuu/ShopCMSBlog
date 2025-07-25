@@ -1,6 +1,7 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.OrderDto;
+import com.example.ShopCMSBlog.dtos.Queries.CustomerQueryDto;
 import com.example.ShopCMSBlog.entites.CustomerEntity;
 import com.example.ShopCMSBlog.entites.SupplierEntity;
 import com.example.ShopCMSBlog.enums.Gender;
@@ -27,8 +28,8 @@ public class CustomerController {
 
 
     @GetMapping("/search")
-    public ResponseEntity<Object> getCustomerById(@RequestParam Long id) {
-        var result = customerService.getCustomerById(id);
+    public ResponseEntity<Object> getCustomer(@RequestBody CustomerQueryDto customerQueryDto) {
+        var result = customerService.getCustomer(customerQueryDto);
         return ResponseEntity.ok(result);
     }
     @Secured("ADMIN")

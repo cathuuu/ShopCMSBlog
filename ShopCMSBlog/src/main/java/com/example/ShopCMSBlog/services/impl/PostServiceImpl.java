@@ -2,6 +2,7 @@ package com.example.ShopCMSBlog.services.impl;
 
 import com.example.ShopCMSBlog.Components.BaseNativeQuery;
 import com.example.ShopCMSBlog.dtos.PostDto;
+import com.example.ShopCMSBlog.dtos.Queries.PostQueryDto;
 import com.example.ShopCMSBlog.dtos.SupplierDto;
 import com.example.ShopCMSBlog.entites.PostEntity;
 import com.example.ShopCMSBlog.entites.ProductReviewEntity;
@@ -54,6 +55,11 @@ public class PostServiceImpl extends CommonServiceImpl<PostEntity, Long, PostRep
 
         repo.delete(postEntity);
         return postMapper.toDto(postEntity);
+    }
+
+    @Override
+    public Page<PostDto> getPost(PostQueryDto postQueryDto) {
+        return repo.getPost(postQueryDto);
     }
 
 }

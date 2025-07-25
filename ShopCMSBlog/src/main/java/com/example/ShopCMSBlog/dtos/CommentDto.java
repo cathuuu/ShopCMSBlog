@@ -20,8 +20,8 @@ import java.time.LocalDateTime;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CommentDto {
     Long id;
-    PostDto post;
-    UserDto user;
+    Long postId;
+    Long userId;
     String content;
     LocalDateTime createdAt;
 }

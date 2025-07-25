@@ -20,7 +20,7 @@ public class CustomerMapper {
         dto.setAddress(entity.getAddress());
         dto.setGender(entity.getGender());
         dto.setDateOfBirth(entity.getDateOfBirth());
-        dto.setUser(UserMapper.toDto(entity.getUser()));
+        dto.setUserId(entity.getUserId());
         return dto;
     }
     public static CustomerEntity toEntity(CustomerDto dto) {
@@ -31,7 +31,7 @@ public class CustomerMapper {
         entity.setAddress(dto.getAddress());
         entity.setGender(dto.getGender());
         entity.setDateOfBirth(dto.getDateOfBirth());
-        entity.setUser(UserMapper.toEntity(dto.getUser(),null));
+        entity.setUserId(dto.getUserId());
         return entity;
     }
     public static List<CustomerDto> toDtoList (List<CustomerEntity> entityList) {

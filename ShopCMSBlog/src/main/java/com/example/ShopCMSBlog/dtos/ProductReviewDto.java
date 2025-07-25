@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ProductReviewDto {
     Long id;
-    ProductDto product;
-    CustomerDto customer;
+    Long productId;
+    Long customerId;
     Integer rating;
     String comment;
     LocalDateTime createdAt;

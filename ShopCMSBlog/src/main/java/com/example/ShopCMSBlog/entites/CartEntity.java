@@ -19,11 +19,9 @@ import java.time.LocalDateTime;
 public class CartEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @OneToOne
-    @JoinColumn(name = "customer_id", unique = true)
-    private CustomerEntity customer;
-
-    private LocalDateTime createdAt = LocalDateTime.now();
+    Long id;
+    @Column(name = "customer_id", unique = true)
+    Long customerId;
+    @Column(name = "created_at")
+    LocalDateTime createdAt;
 }

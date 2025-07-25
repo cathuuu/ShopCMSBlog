@@ -1,6 +1,7 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.OrderDto;
+import com.example.ShopCMSBlog.dtos.Queries.OrderQueryDto;
 import com.example.ShopCMSBlog.services.OrderService;
 import com.example.ShopCMSBlog.utils.UrlUtils;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +18,8 @@ public class OrderController {
 
 
     @GetMapping("/search")
-    public ResponseEntity<Object> getOrder(@RequestParam Long id) {
-        var result = orderService.getOrdersByCustomerId(id);
+    public ResponseEntity<Object> getOrder(@RequestBody OrderQueryDto orderQueryDto) {
+        var result = orderService.getOrder(orderQueryDto);
         return ResponseEntity.ok(result);
     }
 

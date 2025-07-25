@@ -20,13 +20,11 @@ public class CommentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "post_id")
-    PostEntity post;
+    @Column(name = "post_id")
+    Long postId;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    UserEntity user;
+    @Column(name = "user_id")
+    Long userId;
 
     @Column(name = "content", columnDefinition = "TEXT")
     String content;

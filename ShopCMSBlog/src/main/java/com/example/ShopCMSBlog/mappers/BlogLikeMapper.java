@@ -15,16 +15,16 @@ public class BlogLikeMapper {
     public static BlogLikeDto toDto(BlogLikeEntity entity) {
         BlogLikeDto dto = new BlogLikeDto();
         dto.setId(entity.getId());
-        dto.setPost(PostMapper.toDto(entity.getPost()));
-        dto.setUser(UserMapper.toDto(entity.getUser()));
+        dto.setPostId(entity.getPostId());
+        dto.setUserId(entity.getUserId());
         dto.setCreatedAt(entity.getCreatedAt());
         return dto;
     }
     public static BlogLikeEntity toEntity(BlogLikeDto dto) {
         BlogLikeEntity entity = new BlogLikeEntity();
         entity.setId(entity.getId());
-        entity.setPost(PostMapper.toEntity(dto.getPost()));
-        entity.setUser(UserMapper.toEntity(dto.getUser(), null));
+        entity.setPostId(dto.getPostId());
+        entity.setUserId(dto.getUserId());
         entity.setCreatedAt(entity.getCreatedAt());
         return entity;
     }

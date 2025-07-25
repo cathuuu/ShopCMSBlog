@@ -1,6 +1,7 @@
 package com.example.ShopCMSBlog.controllers;
 
 import com.example.ShopCMSBlog.dtos.BlogLikeDto;
+import com.example.ShopCMSBlog.dtos.Queries.BlogLikeQueryDto;
 import com.example.ShopCMSBlog.entites.BlogLikeEntity;
 import com.example.ShopCMSBlog.services.BlogLikeService;
 import com.example.ShopCMSBlog.utils.UrlUtils;
@@ -31,9 +32,9 @@ public class BlogLikeController {
         var result = blogLikeService.findByPost(id);
         return ResponseEntity.ok(result);
     }
-    @GetMapping()
-    public ResponseEntity<Object> findAll() {
-        var result = blogLikeService.getAll();
+    @GetMapping("/search")
+    public ResponseEntity<Object> getBlogLikes(@RequestBody BlogLikeQueryDto blogLikeQueryDto) {
+        var result = blogLikeService.getBlogLike(blogLikeQueryDto);
         return ResponseEntity.ok(result);
     }
 

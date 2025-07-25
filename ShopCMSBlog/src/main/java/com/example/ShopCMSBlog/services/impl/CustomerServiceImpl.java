@@ -2,6 +2,7 @@ package com.example.ShopCMSBlog.services.impl;
 
 import com.example.ShopCMSBlog.Components.BaseNativeQuery;
 import com.example.ShopCMSBlog.dtos.CustomerDto;
+import com.example.ShopCMSBlog.dtos.Queries.CustomerQueryDto;
 import com.example.ShopCMSBlog.entites.CustomerEntity;
 import com.example.ShopCMSBlog.entites.SupplierEntity;
 import com.example.ShopCMSBlog.entites.UserEntity;
@@ -54,6 +55,12 @@ public class CustomerServiceImpl extends CommonServiceImpl<CustomerEntity, Long,
         repo.delete(customerToDelete);
         return customerMapper.toDto(customerToDelete);
     }
+
+    @Override
+    public Page<CustomerDto> getCustomer(CustomerQueryDto customerQueryDto) {
+        return repo.getCustomer(customerQueryDto);
+    }
+
     public Page<CustomerEntity> searchCustomerWithPagination(
             String fullName, String phoneNumber, Long customerId, String address, Gender gender, LocalDate dateOfBirth, Pageable pageable) {
 

@@ -1,5 +1,7 @@
 package com.example.ShopCMSBlog.repositories;
 
+import com.example.ShopCMSBlog.dtos.Queries.SupplierQueryDto;
+import com.example.ShopCMSBlog.dtos.SupplierDto;
 import com.example.ShopCMSBlog.entites.SupplierEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,12 +14,11 @@ public interface SupplierRepositoryCustom {
     Page<SupplierEntity> findAllSuppliersPagedNative(Pageable pageable);
 
 
-    Page<SupplierEntity> searchSuppliersByCriteriaNative(String name, String contactName, String email, String phoneNumber, Pageable pageable);
-
-
     Optional<SupplierEntity> findByIdNative(Long id);
 
 
     List<SupplierEntity> findSuppliersByAddressNative(String address);
+
+    Page<SupplierDto>getSupplies(SupplierQueryDto supplierQueryDto);
 
 }

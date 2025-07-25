@@ -2,6 +2,7 @@ package com.example.ShopCMSBlog.services.impl;
 
 import com.example.ShopCMSBlog.Components.BaseNativeQuery;
 import com.example.ShopCMSBlog.dtos.ProductDto;
+import com.example.ShopCMSBlog.dtos.Queries.ProductQueryDto;
 import com.example.ShopCMSBlog.entites.ProductEntity;
 import com.example.ShopCMSBlog.entites.SupplierEntity;
 import com.example.ShopCMSBlog.entites.UserEntity;
@@ -41,6 +42,12 @@ public class ProductServiceImpl extends CommonServiceImpl <ProductEntity, Long, 
                 new AppException("Cann't found this  " + id));
         repo.delete(productEntity);
     }
+
+    @Override
+    public Page<ProductDto> getProduct(ProductQueryDto productQueryDto) {
+        return repo.getProduct(productQueryDto);
+    }
+
     @Override
     public ProductDto save(ProductDto dto) {
         validateWhenCreateOrUpdate(dto);

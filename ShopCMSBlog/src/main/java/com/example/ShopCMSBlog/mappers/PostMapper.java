@@ -19,7 +19,7 @@ public class PostMapper {
         dto.setContent(entity.getContent());
         dto.setImageUrl(entity.getImageUrl());
         dto.setCreatedAt(entity.getCreatedAt());
-        dto.setAuthor(UserMapper.toDto(entity.getAuthor()));
+        dto.setAuthorId(entity.getAuthorId());
         return dto;
     }
     public static PostEntity toEntity(PostDto dto) {
@@ -29,7 +29,7 @@ public class PostMapper {
         entity.setContent(dto.getContent());
         entity.setImageUrl(dto.getImageUrl());
         entity.setCreatedAt(dto.getCreatedAt());
-        entity.setAuthor(UserMapper.toEntity(dto.getAuthor(),null));
+        entity.setAuthorId(dto.getAuthorId());
         return entity;
     }
     public static List<PostDto> toDtoList (List<PostEntity> entityList) {

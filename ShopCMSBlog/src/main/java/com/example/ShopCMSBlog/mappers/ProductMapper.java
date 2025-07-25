@@ -20,8 +20,8 @@ public class ProductMapper {
         dto.setPrice(entity.getPrice());
         dto.setImageUrl(entity.getImageUrl());
         dto.setStockQuantity(entity.getStokeQuantity());
-        dto.setCategory(CategoryMapper.toDto(entity.getCategory()));
-        dto.setSupplier(SupplierMapper.toDto(entity.getSupplier()));
+        dto.setCategoryId(entity.getCategoryId());
+        dto.setSupplierId(entity.getSupplierId());
         return dto;
     }
     public static ProductEntity toEntity(ProductDto dto) {
@@ -32,8 +32,8 @@ public class ProductMapper {
         entity.setPrice(dto.getPrice());
         entity.setImageUrl(dto.getImageUrl());
         entity.setStokeQuantity(dto.getStockQuantity());
-        entity.setCategory(CategoryMapper.toEntity(dto.getCategory()));
-        entity.setSupplier(SupplierMapper.toEntity(dto.getSupplier()));
+        entity.setCategoryId(dto.getCategoryId());
+        entity.setSupplierId(dto.getSupplierId());
         return entity;
     }
     public static List<ProductDto> toDtoList (List<ProductEntity> entityList) {

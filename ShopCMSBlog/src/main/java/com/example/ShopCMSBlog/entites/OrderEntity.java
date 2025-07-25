@@ -23,11 +23,12 @@ public class OrderEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @ManyToOne @JoinColumn(name = "customer_id")
-    CustomerEntity customer;
+    @Column(name = "customer_id")
+    Long customerId;
     @Column(name = "total_amount", nullable = false)
     BigDecimal totalAmount;
 
+    @Column(name = "status")
     @Enumerated(EnumType.STRING)
     OrderStatus status;
     @Column(name = "created_at", nullable = false)

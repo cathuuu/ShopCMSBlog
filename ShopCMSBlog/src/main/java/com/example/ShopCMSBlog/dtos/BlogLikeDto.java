@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class BlogLikeDto {
     Long id;
-    PostDto post;
-    UserDto user;
+    Long postId;
+    Long userId;
     LocalDateTime createdAt;
 }

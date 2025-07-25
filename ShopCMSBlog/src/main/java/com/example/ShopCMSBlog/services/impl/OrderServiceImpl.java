@@ -1,11 +1,13 @@
 package com.example.ShopCMSBlog.services.impl;
 
 import com.example.ShopCMSBlog.dtos.OrderDto;
+import com.example.ShopCMSBlog.dtos.Queries.OrderQueryDto;
 import com.example.ShopCMSBlog.entites.OrderEntity;
 import com.example.ShopCMSBlog.entites.UserEntity;
 import com.example.ShopCMSBlog.mappers.OrderMapper;
 import com.example.ShopCMSBlog.repositories.OrderRepository;
 import com.example.ShopCMSBlog.services.OrderService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -50,6 +52,11 @@ public class OrderServiceImpl extends CommonServiceImpl<OrderEntity, Long, Order
 
         repo.delete(orderEntity);
         return orderMapper.toDto(orderEntity);
+    }
+
+    @Override
+    public Page<OrderDto> getOrder(OrderQueryDto orderQueryDto) {
+        return repo.getOrder(orderQueryDto);
     }
 
 }

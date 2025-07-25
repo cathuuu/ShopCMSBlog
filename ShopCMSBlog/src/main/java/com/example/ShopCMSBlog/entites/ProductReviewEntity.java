@@ -10,7 +10,7 @@ import lombok.experimental.FieldDefaults;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "product_review")
+@Table(name = "product_reviews")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,13 +19,12 @@ public class ProductReviewEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    ProductEntity product;
 
-    @ManyToOne
+    @JoinColumn(name = "product_id")
+    Long productId;
+
     @JoinColumn(name = "customer_id")
-    CustomerEntity customer;
+    Long customerId;
 
     @Column(name = "rating",nullable = false)
     Integer rating;
@@ -33,6 +32,6 @@ public class ProductReviewEntity {
     @Column(name = "comment",columnDefinition = "TEXT")
     String comment;
 
-    @Column(name = "create_at",nullable = false)
+    @Column(name = "created_at",nullable = false)
     LocalDateTime createdAt = LocalDateTime.now();
 }

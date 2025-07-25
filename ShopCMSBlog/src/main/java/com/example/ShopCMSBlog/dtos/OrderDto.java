@@ -19,7 +19,7 @@ import java.util.List;
 public class OrderDto {
 
     Long id;
-    CustomerDto customer;
+    Long customerId;
     BigDecimal totalAmount;
     OrderStatus status;
     LocalDateTime createdAt;

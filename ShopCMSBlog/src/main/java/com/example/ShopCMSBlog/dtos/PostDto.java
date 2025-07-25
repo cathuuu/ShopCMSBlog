@@ -21,6 +21,5 @@ public class PostDto {
     String content;
     String imageUrl;
     LocalDateTime createdAt;
-    UserDto author;
-
+    Long authorId;
 }
