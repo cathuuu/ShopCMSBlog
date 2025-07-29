@@ -30,9 +30,13 @@ public class OrderController {
     }
 
     @PostMapping()
-    public ResponseEntity<Object> saveOrder(@RequestBody OrderDto user) {
-        var result = orderService.save(user);
+    public ResponseEntity<Object> createOrder(@RequestBody OrderDto orderDto) {
+        var result = orderService.createOrder(orderDto);
         return ResponseEntity.ok(result);
+    }
+    @PutMapping
+    public ResponseEntity<Object> updateOrder(@RequestBody OrderDto orderDto) {
+        return null;
     }
 
     @DeleteMapping()

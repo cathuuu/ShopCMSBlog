@@ -35,7 +35,7 @@ public class SupplierServiceImpl extends CommonServiceImpl<SupplierEntity, Long,
 
 
     @Override
-    public List<SupplierDto> findByIdAndName(Long id, String name) {
+    public List<SupplierEntity> findByIdAndName(Long id, String name) {
         return repo.findByIdAndName(id, name);
     }
 

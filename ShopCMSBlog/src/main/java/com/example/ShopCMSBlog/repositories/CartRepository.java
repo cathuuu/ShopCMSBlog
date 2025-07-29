@@ -3,6 +3,8 @@ package com.example.ShopCMSBlog.repositories;
 import com.example.ShopCMSBlog.dtos.CartDto;
 import com.example.ShopCMSBlog.entites.CartEntity;
 
+import java.util.Optional;
+
 public interface CartRepository extends CommonRepository<CartEntity, Long>, CartRepositoryCustom {
-    CartEntity getCartByCustomerId(Long customerId);
+    Optional<CartEntity> getCartByCustomerId(Long customerId);
 }

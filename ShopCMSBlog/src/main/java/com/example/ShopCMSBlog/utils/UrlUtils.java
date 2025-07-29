@@ -21,7 +21,8 @@ public class UrlUtils {
     public static final String Comment_URL = BASE_URL + "/comments";
     public static final String Category_URL = BASE_URL + "/categories";
     public static final String Cart_URL = BASE_URL + "/carts";
-    public static final String CartItem_URL = BASE_URL + "/cartitems";
+    public static final String CartItem_URL = BASE_URL + "/cartItems";
+    public static final String OrderDetail_URL = BASE_URL + "/orderDetails";
     public static final String BlogLike_URL = BASE_URL + "/blogLikes";
     public static final String AUTH_URL = BASE_URL + "/auth";
     public static final List<String> PUBLIC_URLS = Arrays.asList(

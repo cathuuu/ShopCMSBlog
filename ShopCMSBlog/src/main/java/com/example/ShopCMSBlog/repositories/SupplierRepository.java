@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface SupplierRepository extends CommonRepository<SupplierEntity, Long>, SupplierRepositoryCustom {
-    List<SupplierDto> findByIdAndName(Long id, String name);
+    List<SupplierEntity> findByIdAndName(Long id, String name);
 }

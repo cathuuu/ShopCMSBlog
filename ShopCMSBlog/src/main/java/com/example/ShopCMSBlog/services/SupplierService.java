@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public interface SupplierService extends CommonService<SupplierEntity, Long> {
 
-    List<SupplierDto> findByIdAndName(Long id, String name);
+    List<SupplierEntity> findByIdAndName(Long id, String name);
 
     SupplierDto save(SupplierDto supplierDto);
 

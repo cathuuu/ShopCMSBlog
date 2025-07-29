@@ -3,7 +3,6 @@ package com.example.ShopCMSBlog.services.impl;
 import com.example.ShopCMSBlog.dtos.CartDto;
 import com.example.ShopCMSBlog.dtos.Queries.CartQueryDto;
 import com.example.ShopCMSBlog.entites.CartEntity;
-import com.example.ShopCMSBlog.entites.UserEntity;
 import com.example.ShopCMSBlog.mappers.CartMapper;
 import com.example.ShopCMSBlog.repositories.CartRepository;
 import com.example.ShopCMSBlog.services.CartService;
@@ -20,9 +19,8 @@ public class CartServiceImpl extends CommonServiceImpl<CartEntity, Long, CartRep
     }
 
     @Override
-    public CartDto getCartByCustomerId(Long customerId) {
-        CartEntity cartEntity = repo.getCartByCustomerId(customerId);
-        return cartMapper.toDto(cartEntity);
+    public CartEntity getCartByCustomerId(Long customerId) {
+        return repo.getCartByCustomerId(customerId).orElse(null);
     }
 
     @Override

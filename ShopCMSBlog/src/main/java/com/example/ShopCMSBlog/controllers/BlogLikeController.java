@@ -21,13 +21,13 @@ public class BlogLikeController {
     }
 
     @Secured("ADMIN")
-    @GetMapping("/findbyid")
+    @GetMapping("/findById")
     public ResponseEntity<Object> findLikeById(@RequestParam Long id) {
         var result = blogLikeService.findLikeById(id);
         return ResponseEntity.ok(result);
     }
 
-    @GetMapping("/findbypost")
+    @GetMapping("/findByPost")
     public ResponseEntity<Object> findLikeByPost(@RequestParam Long id) {
         var result = blogLikeService.findByPost(id);
         return ResponseEntity.ok(result);

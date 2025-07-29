@@ -14,4 +14,5 @@ public interface OrderService extends CommonService<OrderEntity, Long> {
     OrderDto save(OrderDto order);
     OrderDto deleteOrder(Long id);
     Page<OrderDto> getOrder(OrderQueryDto orderQueryDto);
+    OrderDto createOrder(OrderDto order);
 }

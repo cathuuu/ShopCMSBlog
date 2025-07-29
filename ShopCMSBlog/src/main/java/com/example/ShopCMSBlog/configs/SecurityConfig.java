@@ -91,7 +91,4 @@ public class SecurityConfig {
     public GrantedAuthorityDefaults grantedAuthorityDefaults() {
         return new GrantedAuthorityDefaults(""); // Xóa tiền tố ROLE_
     }
-
-
-
 }

@@ -26,7 +26,7 @@ public class CartItiemController {
         return ResponseEntity.ok(result);
     }
 
-    @GetMapping("/findbycart")
+    @GetMapping("/findByCart")
     public ResponseEntity<Object> getCartItemByCart(@RequestParam Long id) {
         var result = cartItiemService.getItemsByCart(id);
         return ResponseEntity.ok(result);

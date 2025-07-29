@@ -4,8 +4,6 @@ import com.example.ShopCMSBlog.Components.BaseNativeQuery;
 import com.example.ShopCMSBlog.dtos.CustomerDto;
 import com.example.ShopCMSBlog.dtos.Queries.CustomerQueryDto;
 import com.example.ShopCMSBlog.entites.CustomerEntity;
-import com.example.ShopCMSBlog.entites.SupplierEntity;
-import com.example.ShopCMSBlog.entites.UserEntity;
 import com.example.ShopCMSBlog.enums.Gender;
 import com.example.ShopCMSBlog.mappers.CustomerMapper;
 import com.example.ShopCMSBlog.repositories.CustomerRepository;
@@ -32,7 +30,7 @@ public class CustomerServiceImpl extends CommonServiceImpl<CustomerEntity, Long,
 
     @Override
     public CustomerDto getCustomerById(Long id) {
-        return repo.getCustomerById(id);
+        return repo.getCustomerById(id).orElse(null);
     }
 
     @Override
