@@ -10,6 +10,7 @@ import com.example.ShopCMSBlog.repositories.*;
 import com.example.ShopCMSBlog.services.OrderService;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -78,6 +79,7 @@ public class OrderServiceImpl extends CommonServiceImpl<OrderEntity, Long, Order
     }
 
     @Override
+    @Transactional
     public OrderDto createOrder(OrderDto order) {
         CustomerEntity customerEntity = customerRepository.getCustomerById(order.getCustomerId())
                 .orElseThrow(() -> new AppException("Customer not found"));
