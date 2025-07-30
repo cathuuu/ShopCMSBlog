@@ -29,7 +29,7 @@ public class CustomerServiceImpl extends CommonServiceImpl<CustomerEntity, Long,
     }
 
     @Override
-    public CustomerDto getCustomerById(Long id) {
+    public CustomerEntity getCustomerById(Long id) {
         return repo.getCustomerById(id).orElse(null);
     }
 

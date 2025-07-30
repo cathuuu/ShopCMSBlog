@@ -27,7 +27,7 @@ public class CommentServiceImpl extends CommonServiceImpl<CommentEntity, Long, C
 
     @Override
     public List<CommentDto> getCommentsByPost(Long postId) {
-        return repo.findByPost_Id(postId);
+        return repo.findByPostId(postId);
     }
 
     @Override
